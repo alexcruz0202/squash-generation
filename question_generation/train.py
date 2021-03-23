@@ -20,8 +20,8 @@ from ignite.contrib.handlers.tensorboard_logger import TensorboardLogger, Output
 from pytorch_pretrained_bert import (OpenAIAdam, OpenAIGPTLMHeadModel, OpenAIGPTTokenizer,
                                      GPT2LMHeadModel, GPT2Tokenizer, WEIGHTS_NAME, CONFIG_NAME)
 
-from arguments import parser
-from dataloader import get_dataset
+from squash_generation.question_generation.arguments import parser
+from squash_generation.question_generation.dataloader import get_dataset
 
 SPECIAL_TOKENS = [
     "<bos>", "<eos>", "<paragraph>", "<answer-general>", "<answer-specific>",
