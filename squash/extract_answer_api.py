@@ -31,12 +31,12 @@ def get_answer_spans(para_text):
     return sentences, entities
 
 
-def extract_squash_answers():
-    with open("./squash_generation/squash/generated_outputs/queue/queue.txt", "r") as f:
-        data = f.read().strip()
-    if len(data) == 0:
-        return
-    next_key = data.split("\n")[0]
+def extract_squash_answers(next_key):
+    # with open("./squash_generation/squash/generated_outputs/queue/queue.txt", "r") as f:
+    #     data = f.read().strip()
+    # if len(data) == 0:
+    #     return
+    # next_key = data.split("\n")[0]
 
     # Check whether answer extraction is already complete
     if os.path.exists("./squash_generation/squash/generated_outputs/inputs/%s/input.pkl" % next_key):

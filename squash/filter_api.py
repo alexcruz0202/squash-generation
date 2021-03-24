@@ -190,14 +190,14 @@ class Paragraph(object):
         return general_questions
 
 
-def filter_squash_qa():
-    with open("./squash_generation/squash/generated_outputs/queue/queue.txt", "r") as f:
-        data = f.read().strip()
+def filter_squash_qa(next_key):
+    # with open("./squash_generation/squash/generated_outputs/queue/queue.txt", "r") as f:
+    #     data = f.read().strip()
 
-    if len(data) == 0:
-        return
+    # if len(data) == 0:
+    #     return
 
-    next_key = data.split("\n")[0]
+    # next_key = data.split("\n")[0]
 
     # Check whether the question answering is still pending
     if not os.path.exists("./squash_generation/squash/generated_outputs/generated_answers/%s/predictions.json" % next_key):

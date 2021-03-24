@@ -141,12 +141,12 @@ model.to(args.device)
 model.eval()
 
 
-def generate_squash_question():
-    with open("./squash_generation/squash/generated_outputs/queue/queue.txt", "r") as f:
-        data = f.read().strip()
-    if len(data) == 0:
-        return
-    next_key = data.split("\n")[0]
+def generate_squash_question(next_key):
+    # with open("./squash_generation/squash/generated_outputs/queue/queue.txt", "r") as f:
+    #     data = f.read().strip()
+    # if len(data) == 0:
+    #     return
+    # next_key = data.split("\n")[0]
 
     # Check whether the answer extraction is still pending
     if not os.path.exists("./squash_generation/squash/generated_outputs/inputs/%s/input.pkl" % next_key):

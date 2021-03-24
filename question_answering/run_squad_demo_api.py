@@ -759,7 +759,7 @@ parser.add_argument("--max_query_length", default=64, type=int,
                     help="The maximum number of tokens for the question. Questions longer than this will "
                             "be truncated to this length.")
 parser.add_argument("--do_train", action='store_true', help="Whether to run training.")
-parser.add_argument("--do_predict", default=True, action='store_true', help="Whether to ru,,,n ,eval on the dev set.")
+parser.add_argument("--do_predict", default=True, action='store_true', help="Whether to ru,,,,n ,eval on the dev set.")
 parser.add_argument("--train_batch_size", default=32, type=int, help="Total batch size for training.")
 parser.add_argument("--predict_batch_size", default=16, type=int, help="Total batch size for predictions.")
 parser.add_argument("--learning_rate", default=5e-5, type=float, help="The initial learning rate for Adam.")
@@ -896,12 +896,12 @@ model.to(device)
 logger.info("Model loaded")
 
 
-def generate_squash_answers():
-    with open("./squash_generation/squash/generated_outputs/queue/queue.txt", "r") as f:
-        data = f.read().strip()
-    if len(data) == 0:
-        return
-    next_key = data.split("\n")[0]
+def generate_squash_answers(next_key):
+    # with open("./squash_generation/squash/generated_outputs/queue/queue.txt", "r") as f:
+    #     data = f.read().strip()
+    # if len(data) == 0:
+    #     return
+    # next_key = data.split("\n")[0]
 
     # Check whether the answer extraction is still pending
     if not os.path.exists("./squash_generation/squash/generated_outputs/generated_questions/%s.json" % next_key):
